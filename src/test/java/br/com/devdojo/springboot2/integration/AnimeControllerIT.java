@@ -5,34 +5,28 @@ import br.com.devdojo.springboot2.repository.AnimeRepository;
 import br.com.devdojo.springboot2.request.AnimePostRequestBody;
 import br.com.devdojo.springboot2.util.AnimeCreator;
 import br.com.devdojo.springboot2.util.AnimePostRequestBodyCreator;
-import br.com.devdojo.springboot2.util.AnimePutRequestBodyCreator;
 import br.com.devdojo.springboot2.wrapper.PageableResponse;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.mockito.ArgumentMatchers;
-import org.mockito.BDDMockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.core.ParameterizedTypeReference;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageImpl;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.annotation.DirtiesContext;
 
-import java.util.Collections;
 import java.util.List;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT) // Serve para a aplicação rodar em outra porta disponível que não seja a 8080
 @AutoConfigureTestDatabase // A configuração do banco de dados vai utilizar o valor que temos em memória
 @DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
-public class AnimeControllerIT {
+class AnimeControllerIT {
     @Autowired
     private TestRestTemplate testRestTemplate;
     @LocalServerPort

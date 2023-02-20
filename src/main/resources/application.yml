@@ -1,6 +1,6 @@
 server:
   error:
-    include-stacktrace: on_param
+    include-stacktrace: always
 
 spring:
   datasource:
@@ -17,3 +17,7 @@ logging:
     org:
       hibernate:
         SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
